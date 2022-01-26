@@ -4,3 +4,4 @@ ACTIONS - describe what happens but dont say how the state changes - REDUSERS do
 ACTIONS CREATORS - is a function that creates/returns an action, which is an object with type property
 REDUCERS - specify how the app's state changes in response to actions sent to the store
          - are function that accepts state and action as an arguments and return the next state of application
+STORE - holds the application state, 
