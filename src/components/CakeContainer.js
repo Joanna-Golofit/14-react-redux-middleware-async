@@ -1,8 +1,28 @@
-const CakeContainer = () => {
-  return <div>
-    <h2>Number of cakes</h2>
-    <button>Buy a Cake</button>
-  </div>;
+// import { buyCake } from "../redux/cake/cakeActions";
+import { connect } from "react-redux";
+import { buyCake } from "../redux";
+
+const CakeContainer = (props) => { // to jest props dzieki connect
+  return (
+    <div>
+      <h2>Number of cakes - {props.numOfCakes}</h2>
+      <button onClick = {props.buyCake}>Buy a Cake</button>
+    </div>
+  );
 };
 
-export default CakeContainer;
+const mapStateToProps = (state) => {
+  return {
+    numOfCakes: state.numOfCakes,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    buyCake: () => dispatch(buyCake()),
+  };
+};
+
+//the connect function connects component to store
+
+export default connect(mapStateToProps, mapDispatchToProps)(CakeContainer);
