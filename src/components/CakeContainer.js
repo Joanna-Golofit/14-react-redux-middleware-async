@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { buyCake } from "../redux";
 
 const CakeContainer = (props) => { // to jest props dzieki connect
-  console.log(props);
+  // console.log(props);
 
   return (
     <div>
