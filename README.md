@@ -12,3 +12,4 @@ STORE - holds the application state,
 
 actions, actions-creator, reducer, store, useSelector, useDispatch, rootReducer = combineReducers, 
 applyMiddleware(logger), redux-devtools-extension
+action.payload
