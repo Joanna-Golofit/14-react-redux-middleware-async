@@ -12,7 +12,7 @@ const UserContainer = () => {
 
 useEffect(() => {
   dispatch(fetchUsers());
-}, []);
+}, [dispatch]);
 
 console.log("users", users);
 console.log("error", error);
