@@ -5,9 +5,9 @@ import {
 } from "./userTypes";
 
 const initialState = {
-  loading: false,
+  loading: true,
   users: [],
-  error: ""
+  error: "",
 };
 
 const userReducer = (state = initialState, action) => {

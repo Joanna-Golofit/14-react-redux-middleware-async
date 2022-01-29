@@ -27,19 +27,20 @@ export const fetchUsersFailure = (error) => {
 };
 
 // this is special action creator (thanks to redux-thunk) it can return other function instead of returning an action = an object with type.
-// and what is special BOUT THIS FUNCTION IT DOESN'T have to be pure - it can have side effects such as async API calls
+// and what is special ABOUT THIS FUNCTION IT DOESN'T have to be pure - it can have side effects such as async API calls
 export const fetchUsers = () => {
   return (dispatch) => {
     dispatch(fetchUsersRequest); // to set loading to true
     axios
       .get("https://jsonplaceholder.typicode.com/users")
-      .then((response) => {
-        const users = response.data
+      .then(response => {
+        const users = response.data;
         dispatch(fetchUsersSuccess(users));
+        console.log("axios", users);
       })
       .catch(error => {
         const errorMsg = error.message
-        dispatch(fetchUsersFailure(errorMsg));
+        dispatch(fetchUsersFailure(errorMsg))
       })
   };
 };
